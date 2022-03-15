@@ -1,12 +1,18 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
+import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Objects;
 
-
+@MappedSuperclass
 public abstract class AbstractEntity {
 
+    @Id
+    @GeneratedValue
     private int id;
 
+    @NotBlank
+    @Size(max = 100, message = "Exceeds maximum of 100 characters.")
     private String name;
 
     public int getId() {
