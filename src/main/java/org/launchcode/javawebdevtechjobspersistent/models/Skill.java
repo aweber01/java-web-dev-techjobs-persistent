@@ -12,8 +12,8 @@ public class Skill extends AbstractEntity {
     @Size(max = 255, message = "Exceeds maximum of 255 characters.")
     private String description;
 
-    @ManyToMany//(mappedBy = "skills")//@JoinColumn(name = "id")
-    private final List<Job> jobs = new ArrayList<>();
+    @ManyToMany(mappedBy = "skills")
+    private List<Job> jobs = new ArrayList<>();
 
     public Skill(){}
 
