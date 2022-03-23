@@ -1,7 +1,6 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +12,7 @@ public class Skill extends AbstractEntity {
     @Size(max = 255, message = "Exceeds maximum of 255 characters.")
     private String description;
 
-    @ManyToMany(mappedBy = "skill")
-    //@JoinColumn(name = "id")
+    @ManyToMany//(mappedBy = "skills")//@JoinColumn(name = "id")
     private final List<Job> jobs = new ArrayList<>();
 
     public Skill(){}
@@ -35,4 +33,5 @@ public class Skill extends AbstractEntity {
     public List<Job> getJobs() {
         return jobs;
     }
+
 }
